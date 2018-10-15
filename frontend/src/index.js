@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import './assets/stylesheets/index.css';
+import  Phonebook  from './containers/Phonebook.container';
+import registerServiceWorker from './utils/registerServiceWorker';
 
 import { Provider } from 'react-redux';
-import { storeConfig } from './storeConfig';
-import { rootSaga } from './saga';
+import { storeConfig } from './utils/storeConfig';
+import rootSaga from './containers/Phonebook.saga';
 
 
 let store = storeConfig();
@@ -14,6 +14,6 @@ store.runSaga(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-          <App />
+          <Phonebook />
           </Provider>, document.getElementById('root'));
 // registerServiceWorker();

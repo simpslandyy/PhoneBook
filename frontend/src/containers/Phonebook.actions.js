@@ -1,4 +1,4 @@
-import { createAction } from './helpers';
+import { createAction } from '../utils/helpers';
 
 export const fetchData = () => {
   return createAction('FETCH');

@@ -1,6 +1,6 @@
 import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware } from 'redux';
-import { phoneBook } from './reducers';
+import { phoneBook } from '../containers/Phonebook.reducer';
 
 export function storeConfig() {
   const storeMiddleware = createSagaMiddleware();

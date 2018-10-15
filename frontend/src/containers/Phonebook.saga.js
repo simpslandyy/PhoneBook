@@ -20,7 +20,7 @@ export function *updateContact(payload) {
   return payload;
 }
 
-export function* rootSaga() {
+export default function* rootSaga() {
   yield takeEvery('FETCH', fetchContacts);
   yield takeEvery('ADD', addContact);
   yield takeEvery('DELETE', deleteContact);

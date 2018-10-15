@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
-import * as actions from './actions';
-import './App.css';
+import logo from '../assets/logo.svg';
+import * as actions from './Phonebook.actions';
+import '../assets/stylesheets/App.css';
 
 
-class App extends React.Component {
+class PhoneBook extends React.Component {
   componentDidMount() {
-      console.log(this.props.fetchData())
+      console.log(this.props)
   }
   render() {
     return (
@@ -26,8 +26,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    phoneBook: state.phoneBook
+    phoneBook: state
   };
 }
 
-export default connect(mapStateToProps, actions)(App);
+export default connect(mapStateToProps, actions)(PhoneBook);
