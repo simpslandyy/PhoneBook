@@ -6,7 +6,7 @@ import registerServiceWorker from './utils/registerServiceWorker';
 
 import { Provider } from 'react-redux';
 import { storeConfig } from './utils/storeConfig';
-import rootSaga from './containers/Phonebook.saga';
+import rootSaga from './rootSaga';
 
 
 let store = storeConfig();

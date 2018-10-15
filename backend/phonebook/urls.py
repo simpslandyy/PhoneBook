@@ -17,13 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from tastypie.api import Api
-from myBook.api import PhoneBookResource, CategoriesResource
+from myBook.api import ContactsResource, CategoriesResource, UsersResource
 
 v1_api = Api(api_name='v1')
 
 #register the apis under this domain
-v1_api.register(PhoneBookResource())
+v1_api.register(ContactsResource())
 v1_api.register(CategoriesResource())
+v1_api.register(UsersResource())
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

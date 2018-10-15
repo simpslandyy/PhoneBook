@@ -1,8 +1,9 @@
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
+import { getContacts } from '../utils/helpers';
 
 export function *fetchContacts(payload) {
-  console.log("fetching contacts")
-  return payload;
+  const contacts = yield getContacts();
+  yield put({ type: 'FETCH_SUCCESS', payload: contacts })
 }
 
 export function *addContact(payload) {
@@ -20,7 +21,7 @@ export function *updateContact(payload) {
   return payload;
 }
 
-export default function* rootSaga() {
+export function* watcherSaga() {
   yield takeEvery('FETCH', fetchContacts);
   yield takeEvery('ADD', addContact);
   yield takeEvery('DELETE', deleteContact);

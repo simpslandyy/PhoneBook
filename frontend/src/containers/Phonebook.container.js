@@ -7,6 +7,7 @@ import '../assets/stylesheets/App.css';
 
 class PhoneBook extends React.Component {
   componentDidMount() {
+      this.props.fetchData()
       console.log(this.props)
   }
   render() {

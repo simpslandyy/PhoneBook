@@ -3,8 +3,9 @@ const initialState = {}
 
 export const phoneBook = (state = initialState, action) => {
   switch(action.type) {
-    case 'FETCH':
-      return state;
+    case 'FETCH_SUCCESS':
+      console.log(action.payload)
+      return R.merge(state, action.payload)
     case 'ADD':
       return state;
     case 'UPDATE':
