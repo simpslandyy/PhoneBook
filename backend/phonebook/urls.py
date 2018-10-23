@@ -16,17 +16,19 @@ Including another URLconf
 
 from django.contrib import admin
 from django.conf.urls import url, include
+from rest_framework_jwt.views import obtain_jwt_token
 from tastypie.api import Api
-from myBook.api import ContactsResource, CategoriesResource, UsersResource
+from myBook.api import ContactsResource, CategoriesResource
+
 
 v1_api = Api(api_name='v1')
 
 #register the apis under this domain
 v1_api.register(ContactsResource())
 v1_api.register(CategoriesResource())
-v1_api.register(UsersResource())
 
 urlpatterns = [
+    url('token-auth/', obtain_jwt_token),
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(v1_api.urls)),
 ]

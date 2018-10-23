@@ -3,12 +3,13 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-class Users(models.Model):
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=8)
 
-    def __str__(self):
-        return self.username + '___' + self.password
+# class Users(models.Model):
+#     username = models.CharField(max_length=100)
+#     password = models.CharField(max_length=8)
+#
+#     def __str__(self):
+#         return self.username + '___' + self.password
 
 class Categories(models.Model):
     FAMILY = 'FM'
@@ -37,7 +38,7 @@ class Contacts(models.Model):
     phoneNumber = models.CharField(primary_key=True,
                                     max_length=10)
     category = models.ForeignKey('Categories')
-    owner = models.ForeignKey('Users')
+    # owner = models.ForeignKey('Users')
 
     def __str__(self):
         return 'Name: ' + self.firstName + ' ' + self.lastName + '\n Number: ' + self.phoneNumber + '\n Category: ' + self.category.category + '\n Owner: ' + self.owner.username;
